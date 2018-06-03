@@ -1,0 +1,78 @@
+parameters:
+    bin_dir: "./vendor/bin"
+    git_dir: "."
+    tasks:
+#        ant: ~
+#        atoum: ~
+#        behat: ~
+#        brunch: ~
+#        clover_coverage: ~
+#        codeception: ~
+#        composer: ~
+#        composer_require_checker: ~
+#        composer_script: ~
+#        deptrac: ~
+#        doctrine_orm: ~
+#        file_size:~
+#        gherkin: ~
+        git_blacklist:
+            keywords:
+              - "var_dump("
+              - "console.log("
+              - "print_r("
+              - "exit;"
+              - "exit("
+              - "die("
+              - "die;"
+              - "fileadmin"
+              - "DebuggerUtility"
+              - "dump("
+            triggered_by: [php,js,html,twig]
+#        git_branch_name: ~
+#        git_commit_message: ~
+#        grunt: ~
+#        gulp: ~
+#        infection: ~
+#        jsonlint: ~
+#        kahlan: ~
+#        make: ~
+##        npm_script: ~
+#        phan: ~
+#        phing: ~
+#        php7cc: ~
+#        phpcpd: ~
+        phpcs:
+            standard: PSR2
+            severity: ~
+            error_severity: ~
+            warning_severity: ~
+            tab_width: 4
+            whitelist_patterns: ['/^src\/App\/(.*)/']
+            encoding: UTF8
+            ignore_patterns: ['/^(vendor|var|public)\/(.*)/']
+            sniffs: []
+            triggered_by: [php]
+#        phpcsfixer: ~
+#        phpcsfixer2: ~
+        php_cs_auto_fixerv2:
+            allow_risky: false
+            rules: ['@@Symfony', '@@DoctrineAnnotation']
+            config: ".php_cs"
+            cache_file: ".php_cs.cache"
+        phplint: ~
+#        phpmd: ~
+#        phpmnd: ~
+#        phpparser: ~
+#        phpspec: ~
+#        phpstan: ~
+#        phpunit: ~
+        phpversion:
+            project: '7.1'
+#        robo: ~
+#        securitychecker: ~
+#        shell: ~
+#        xmllint: ~
+        yamllint: ~
+    testsuites: []
+    extensions:
+      - Wearejust\GrumPHPExtra\Extension\Loader
